@@ -1,4 +1,3 @@
-// login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,29 +7,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
+  email: string = '';
   password: string = '';
   verPassword: boolean = false;
 
   constructor(private router: Router) {}
 
-  toggleVerPassword() {
-    this.verPassword = !this.verPassword;
-  }
-
   iniciarSesion() {
+   
     const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    const usuario = usuarios.find((user: any) => user.username === this.username && user.password === this.password);
+    const usuarioEncontrado = usuarios.find((usuario: any) => usuario.email === this.email && usuario.password === this.password);
 
-    if (usuario) {
-      if (usuario.bloqueado) {
-        alert('Usuario bloqueado. Contacte al administrador.');
+    if (usuarioEncontrado) {
+      if (usuarioEncontrado.bloqueado) {
+        alert('Usuario bloqueado. Contacta al administrador.');
       } else {
-        localStorage.setItem('usuarioActual', JSON.stringify(usuario));
-        this.router.navigate(['/dashboard']); // Redirige al dashboard u otra ruta después del login
+        localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
+    
+        this.router.navigate(['/dashboard']);
       }
     } else {
-      alert('Usuario o contraseña incorrectos.');
+      alert('Email o contraseña incorrectos.');
     }
+  }
+
+  toggleVerPassword() {
+    this.verPassword = !this.verPassword;
   }
 }
