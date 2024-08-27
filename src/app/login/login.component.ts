@@ -1,33 +1,30 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './login.component.html'
 })
 export class LoginComponent {
   email: string = '';
   password: string = '';
   verPassword: boolean = false;
 
-  constructor(private router: Router) {}
+  login() {
+    const user = JSON.parse(localStorage.getItem(this.email) || '{}');
 
-  iniciarSesion() {
-   
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    const usuarioEncontrado = usuarios.find((usuario: any) => usuario.email === this.email && usuario.password === this.password);
+    if (user && !user.blocked) {
+      if (user.password === this.password) {
+        localStorage.setItem('currentUser', this.email); // con esto se almacena el usuario
+        alert('Login exitoso');
 
-    if (usuarioEncontrado) {
-      if (usuarioEncontrado.bloqueado) {
-        alert('Usuario bloqueado. Contacta al administrador.');
       } else {
-        localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
-    
-        this.router.navigate(['/dashboard']);
+        alert('Email o contraseña incorrectos');
       }
+    } else if (user && user.blocked) {
+      alert('El usuario está bloqueado');
     } else {
-      alert('Email o contraseña incorrectos.');
+      alert('Email no registrado');
     }
   }
 

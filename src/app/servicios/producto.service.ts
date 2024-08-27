@@ -6,9 +6,8 @@ import { Producto } from '../productos/producto.model';
 })
 export class ProductoService {
   private productos: Producto[] = [
-    { id: 1, nombre: 'Producto 1', descripcion: 'Descripción del producto 1', precio: 100, imagenUrl: 'https://via.placeholder.com/150' },
-    { id: 2, nombre: 'Producto 2', descripcion: 'Descripción del producto 2', precio: 200, imagenUrl: 'https://via.placeholder.com/150' },
-   
+    { id: 1, nombre: 'Producto 1', descripcion: 'Descripción del producto 1', precio: 100, imagenUrl: '' },
+    { id: 2, nombre: 'Producto 2', descripcion: 'Descripción del producto 2', precio: 200, imagenUrl: ''}
   ];
 
   obtenerProductos(): Producto[] {
