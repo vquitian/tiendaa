@@ -1,25 +1,12 @@
-import { Injectable } from '@angular/core';
 
+import { Component } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class UserService {
-  private users = [
-    { email: 'carlos@gmail.com', password: 'carlos123', role: 'administrador', blocked: false },
-    { email: 'estela@gmail.com', password: 'estela123', role: 'supervisor', blocked: false },
-    { email: 'esteban@gmail.com', password: 'esteban123', role: 'agente', blocked: false },
-    { email: 'sara@gmail.com', password: 'sara123', role: 'cliente', blocked: false }
-  ];
-
-  constructor() {
-    this.preloadUsers();
-  }
-
-  preloadUsers() {
-    this.users.forEach(user => {
-      localStorage.setItem(user.email, JSON.stringify(user));
-    });
-  }
+export class AppComponent {
+  title = 'E-commerce';
 }
 
