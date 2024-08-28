@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
+import { UsuarioService } from '../services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -6,15 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  nombre: string = '';
-  contraseña: string = '';
-  verContraseña: boolean = false;
+  user: string = '';
+  password: string = '';
+  verPasword: boolean = false;
 
   constructor() {}
 
+
   iniciarSesion() {
     // Aquí pones la lógica para iniciar sesión
-    console.log('Nombre:', this.nombre);
-    console.log('Contraseña:', this.contraseña);
+    console.log('Nombre:', this.user);
+    console.log('Contraseña:', this.password);
   }
 }

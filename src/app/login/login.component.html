@@ -1,27 +1,26 @@
-
 <div class="container mt-5">
-<div class="row justify-content-center">
-<div class="col-md-6">
-  <div class="card">
-  <div class="card-header">Iniciar Sesión</div>
-  <div class="card-body">
-<form (ngSubmit)="iniciarSesion()">
-  <div class="mb-3">
-  <label class="form-label">Nombre</label>
-  <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" required>
-  </div>
-  <div class="mb-3">
-  <label class="form-label">Contraseña</label>
-  <input [type]="verContraseña ? 'text' : 'password'" class="form-control" [(ngModel)]="contraseña" name="contraseña" required>
-  <div class="form-check mt-2">
-  <input class="form-check-input" type="checkbox" id="verContraseña" (change)="verContraseña = !verContraseña">
-  <label class="form-check-label" for="verContraseña">Mostrar Contraseña</label>
-  </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-  </form>
-  </div>
-  </div>
-  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Iniciar Sesión</div>
+        <div class="card-body">
+          <form (ngSubmit)="iniciarSesion()">
+            <div class="mb-3">
+              <label class="form-label">User</label>
+              <input type="text" class="form-control" [(ngModel)]="user" name="user" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Contraseña</label>
+              <input [type]="verPasword? 'text' : 'password'" class="form-control" [(ngModel)]="verPasword" name="contrasena" required>
+            </div>
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="checkbox" id="verContrasena" (change)="verPasword = !verPasword">
+              <label class="form-check-label" for="verContrasena">Mostrar Contraseña</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
