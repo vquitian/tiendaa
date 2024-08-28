@@ -1,0 +1,6 @@
+<div class="gallery ">
+    <figure *ngFor="let producto of productos; let i = index" class="gallery_item mb-0">
+      <img [src]="producto.imagen" [alt]="'Imagen del producto ' + producto.nombre" class="gallery__img rounded-3">
+    </figure>
+  </div>
+  

@@ -8,13 +8,15 @@ import { NotificacionesComponent } from './componentes/notificaciones/notificaci
 import { HomeComponent } from './componentes/home/home.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductosComponent } from './componentes/productos/productos.component';
 @NgModule({
   
   declarations: [				
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    HomeComponent  
+    HomeComponent,
+    ProductosComponent  
    ],
   imports: [
     BrowserModule,

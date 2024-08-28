@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +17,9 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    const formElement = document.querySelector('.card-body');
+
+    this.cargarUsuariosDePrueba();
+
     fromEvent(window, 'load')
       .pipe(
         map(() => {
@@ -26,6 +27,21 @@ export class LoginComponent implements OnInit {
         })
       )
       .subscribe();
+  }
+
+ 
+  private cargarUsuariosDePrueba(): void {
+    const usuariosExistentes = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    if (usuariosExistentes.length === 0) {
+      const usuariosDePrueba = [
+        { id: 1, user: 'admin', password: 'admin123', rol: 'Administrador', bloqueado: false },
+        { id: 2, user: 'supervisor', password: 'supervisor123', rol: 'Supervisor', bloqueado: false },
+        { id: 3, user: 'agente', password: 'agente123', rol: 'Agente', bloqueado: false },
+        { id: 4, user: 'cliente', password: 'cliente123', rol: 'Cliente', bloqueado: false }
+      ];
+
+      localStorage.setItem('usuarios', JSON.stringify(usuariosDePrueba));
+    }
   }
 
   iniciarSesion(): void {
@@ -37,7 +53,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
 
       // Redirigir al Home
-      this.router.navigate(['/home']);
+      this.router.navigate(['./home']);
     } else {
       alert('Usuario o contraseña incorrectos, o el usuario está bloqueado.');
     }
