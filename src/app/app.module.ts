@@ -2,14 +2,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { NotificacionesComponent } from './componentes/notificaciones/notificaciones.component';
+import { HomeComponent } from './componentes/home/home.component';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AppRoutingModule } from './app-routing.module';
-import { NotificacionesComponent } from './notificaciones/notificaciones.component';
-import { GestionUsuariosComponent } from './gestion-usuarios/gestion-usuarios.component';
-
-
 @NgModule({
   
   declarations: [				
@@ -17,7 +14,7 @@ import { GestionUsuariosComponent } from './gestion-usuarios/gestion-usuarios.co
     LoginComponent,
       HomeComponent,
       NotificacionesComponent,
-      GestionUsuariosComponent
+      NavbarComponent
    ],
   imports: [
     BrowserModule,

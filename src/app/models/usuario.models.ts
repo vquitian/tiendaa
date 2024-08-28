@@ -1,8 +1,8 @@
 export interface Usuario {
-    id: number; 
+    id: number;
     nombre: string;
-    bloqueado: boolean
-    rol: string
-  
+    rol: string;
+    bloqueado: boolean;
+    password:string;
   }
   
