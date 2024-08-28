@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-login',

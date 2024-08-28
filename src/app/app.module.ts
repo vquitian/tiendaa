@@ -7,20 +7,19 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { NotificacionesComponent } from './componentes/notificaciones/notificaciones.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   
   declarations: [				
     AppComponent,
     LoginComponent,
-      HomeComponent,
-      NotificacionesComponent,
-      NavbarComponent
+    NavbarComponent,
+    HomeComponent  
    ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
-      
   ],
   providers: [],
   bootstrap: [AppComponent]

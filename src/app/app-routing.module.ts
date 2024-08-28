@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './login/login.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { GestionUsuariosComponent } from './gestion-usuarios/gestion-usuarios.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { GestionUsuariosComponent } from './componentes/gestion-usuarios/gestion-usuarios.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },

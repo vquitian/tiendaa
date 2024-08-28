@@ -1,12 +1,1 @@
-<!-- src/app/components/notificaciones/notificaciones.component.html -->
-<div class="position-fixed" [ngClass]="{'top-0 end-0': notificaciones.length, 'd-none': !notificaciones.length}">
-  <div *ngFor="let notificacion of notificaciones" class="toast show mb-2" [ngClass]="{
-    'bg-success text-light': notificacion.tipo === 'success',
-    'bg-danger text-light': notificacion.tipo === 'error',
-    'bg-info text-light': notificacion.tipo === 'info'
-  }">
-    <div class="toast-body">
-      {{ notificacion.mensaje }}
-    </div>
-  </div>
-</div>
+

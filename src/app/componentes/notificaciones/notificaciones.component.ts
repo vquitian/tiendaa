@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificacionService } from '../services/notification.service';
+import { NotificacionService} from 'src/app/services/notification.service';
 @Component({
   selector: 'app-notificaciones',
   templateUrl: './notificaciones.component.html',

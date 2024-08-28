@@ -9,7 +9,7 @@
 
 .card {
   width: 100%;
-  max-width: 400px; /* Establece un ancho máximo para la tarjeta */
+  max-width: 1000px; /* Establece un ancho máximo para la tarjeta */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   border: none;
